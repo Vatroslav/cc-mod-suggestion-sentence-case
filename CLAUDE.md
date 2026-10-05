@@ -3,7 +3,7 @@
 A Claude Code mod: the dim prompt suggestion that Tab accepts starts with a capital letter and ends with a full stop. Vatra writes his prompts that way, and the suggestion often came in lowercase without a full stop. Built 5.10.2026. The idea and its history are in `personal-os/tasks/someday/claude-code-mods.md`.
 
 ## Language
-- **Everything in this repo is in English** (Vatra, 5.10.2026: the repo may become public). Code, comments, test names, README, CLAUDE.md and commit messages. The conversation with Vatra stays in Croatian.
+- **Everything in this repo is in English** (Vatra, 5.10.2026). The repo is public since 5.10.2026. Code, comments, test names, README, CLAUDE.md and commit messages. The conversation with Vatra stays in Croatian.
 - The README must stay accurate when a rule changes.
 
 ## How it works
