@@ -1,0 +1,11 @@
+{
+  "name": "cc-mod-suggestion-sentence-case",
+  "owner": { "name": "Vatroslav Mileusnić" },
+  "plugins": [
+    {
+      "name": "cc-mod-suggestion-sentence-case",
+      "source": "./plugin",
+      "description": "The prompt suggestion starts with a capital letter and ends with a full stop"
+    }
+  ]
+}

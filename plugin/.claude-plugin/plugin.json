@@ -1,0 +1,6 @@
+{
+  "name": "cc-mod-suggestion-sentence-case",
+  "version": "0.1.0",
+  "description": "The dim prompt suggestion that Tab accepts starts with a capital letter and ends with a full stop, unless it is a slash command or already ends a sentence",
+  "author": { "name": "Vatroslav Mileusnić" }
+}
