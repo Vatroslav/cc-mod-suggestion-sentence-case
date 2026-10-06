@@ -28,6 +28,8 @@ It handles every suggestion, both Claude Code's own and any that another plugin 
 
 In 2.1.286 the engine raises `prompt.suggest` for its own suggestion only in the interactive terminal session. In an SDK host, such as the Code tab of Claude Desktop, it sends the suggestion to the host as a `prompt_suggestion` message without raising the event, so the mod never sees it and the suggestion shows unchanged. No other event carries that message. The mod starts working there by itself once the engine routes the SDK suggestion through `prompt.suggest`.
 
+A minimal repro is in [`repro/sdk-prompt-suggest`](repro/sdk-prompt-suggest): a plugin that prefixes every suggestion passing through `prompt.suggest` with `[prompt.suggest ran]`. In an SDK-mode session (`claude -p --input-format stream-json --output-format stream-json --verbose --prompt-suggestions --plugin-dir repro/sdk-prompt-suggest`) the `prompt_suggestion` message arrives without the prefix.
+
 ## Install
 
 ```bash

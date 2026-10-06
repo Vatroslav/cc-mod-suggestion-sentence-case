@@ -1,0 +1,5 @@
+{
+  "name": "repro-sdk-prompt-suggest",
+  "version": "0.1.0",
+  "description": "Repro: marks every prompt suggestion that passes through prompt.suggest"
+}
