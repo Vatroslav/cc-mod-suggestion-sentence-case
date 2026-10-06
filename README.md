@@ -24,11 +24,9 @@ One `prompt.suggest` hook in `plugin/hooks/register.ts` rewrites the text and pa
 
 It handles every suggestion, both Claude Code's own and any that another plugin proposes through `$.prompt.suggest`.
 
-## Limitation: not in Claude Desktop (Claude Code 2.1.286)
+## Limitation: not in Claude Desktop yet
 
-In 2.1.286 the engine raises `prompt.suggest` for its own suggestion only in the interactive terminal session. In an SDK host, such as the Code tab of Claude Desktop, it sends the suggestion to the host as a `prompt_suggestion` message without raising the event, so the mod never sees it and the suggestion shows unchanged. No other event carries that message. The mod starts working there by itself once the engine routes the SDK suggestion through `prompt.suggest`.
-
-A minimal repro is in [`repro/sdk-prompt-suggest`](repro/sdk-prompt-suggest): a plugin that prefixes every suggestion passing through `prompt.suggest` with `[prompt.suggest ran]`. In an SDK-mode session (`claude -p --input-format stream-json --output-format stream-json --verbose --prompt-suggestions --plugin-dir repro/sdk-prompt-suggest`) the `prompt_suggestion` message arrives without the prefix. Reported as [anthropics/claude-code#99876](https://github.com/anthropics/claude-code/issues/99876).
+In the Code tab of Claude Desktop the suggestion shows unchanged: there the engine sends it to the host without raising `prompt.suggest`, so the mod never sees it. The mod starts working there by itself once the engine routes that suggestion through `prompt.suggest`. The versions measured, a minimal repro and the bug report ([anthropics/claude-code#99876](https://github.com/anthropics/claude-code/issues/99876)) are in [`docs/claude-desktop.md`](docs/claude-desktop.md).
 
 ## Install
 
