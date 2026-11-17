@@ -1,14 +1,17 @@
 ---
 verified:
   - by: claude/opus-5.5
+    at: 2026-11-17T12:30:00+01:00
+    how: gh issue view 99876 -R anthropics/claude-code; repro/sdk-prompt-suggest in SDK mode on 2.1.325 (the CLI Claude Desktop runs), debug log checked
+  - by: claude/opus-5.5
     at: 2026-10-06T10:50:00+02:00
     how: gh issue view 99876 -R anthropics/claude-code; repro/sdk-prompt-suggest in SDK mode on 2.1.288 (the CLI Claude Desktop runs); read the 2.1.288 bundle
-stale_after: 2026-10-20T00:00:00+02:00
+stale_after: 2026-12-17T00:00:00+01:00
 ---
 
 # Claude Desktop: the suggestion skips `prompt.suggest`
 
-Measured on Claude Code 2.1.286 and 2.1.288. The mod does not work in the Code tab of Claude Desktop.
+Measured on Claude Code 2.1.286, 2.1.288 and 2.1.325. The mod does not work in the Code tab of Claude Desktop.
 
 ## What happens
 
@@ -30,12 +33,15 @@ The `prompt_suggestion` message arrives without the prefix, and not capitalized 
 |---|---|
 | 2.1.286 | `yes` |
 | 2.1.288 | `yes, write it` |
+| 2.1.325 | `Yes, write the limerick.` |
+
+On 2.1.325 the model itself wrote that suggestion as a sentence, but the marker is missing and the debug log has no `prompt.suggest (suggestion): ...` line, so the hook still did not run. One sample says nothing about how the engine writes suggestions in general.
 
 A second turn that closes the conversation ("say goodbye") may end with no suggestion at all, which proves nothing. End it with a question.
 
 ## Bug report
 
-[anthropics/claude-code#99876](https://github.com/anthropics/claude-code/issues/99876). At the last check: open, no comments.
+[anthropics/claude-code#99876](https://github.com/anthropics/claude-code/issues/99876). At the last check (17.11.2026): open, no comments, labelled `bug`, `has repro`, `area:desktop`, `area:hooks`, `area:plugins`, `platform:windows`.
 
 ## When it changes
 
