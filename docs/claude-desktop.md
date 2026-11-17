@@ -41,7 +41,7 @@ A second turn that closes the conversation ("say goodbye") may end with no sugge
 
 ## Bug report
 
-[anthropics/claude-code#99876](https://github.com/anthropics/claude-code/issues/99876). At the last check (17.11.2026): open, no comments, labelled `bug`, `has repro`, `area:desktop`, `area:hooks`, `area:plugins`, `platform:windows`.
+[anthropics/claude-code#99876](https://github.com/anthropics/claude-code/issues/99876). On 17.11.2026 Vatra's account added [a comment](https://github.com/anthropics/claude-code/issues/99876#issuecomment-6946826955) that it still reproduces on 2.1.325. At that check: open, no other comments, labelled `bug`, `has repro`, `area:desktop`, `area:hooks`, `area:plugins`, `platform:windows`.
 
 ## When it changes
 
